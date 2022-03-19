@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "110440619533",
+    "firebase_url": "https://chatapp-60ca2-default-rtdb.firebaseio.com",
+    "project_id": "chatapp-60ca2",
+    "storage_bucket": "chatapp-60ca2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110440619533:android:e4d22ec2c4231f564eff44",
+        "android_client_info": {
+          "package_name": "com.seda.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110440619533-mgjf418saccb49ns4vf3uo5cvbl915tk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATSJIwWwdL5WbcQagfqu16dgqJZIIpFZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110440619533-mgjf418saccb49ns4vf3uo5cvbl915tk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
