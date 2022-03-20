@@ -19,7 +19,7 @@
         android:layout_marginTop="-59dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
-        android:text="@string/sign_up"
+        android:text="SİGN IN"
         android:textColor="@color/primaryTextColor"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,25 +28,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_margin="12dp">
 
         <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:fontFamily="sans-serif"
-            android:hint="@string/enter_name"
-            android:padding="13dp"
-            android:textColor="@color/primaryTextColor">
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/email"
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -58,7 +46,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
@@ -69,42 +57,34 @@
 
         </EditText>
 
-        <EditText
-            android:id="@+id/confirmpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:fontFamily="sans-serif"
-            android:hint="@string/enter_confirm"
-            android:padding="13dp"
-            android:textColor="@color/primaryTextColor">
 
-        </EditText>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/sign_up"
+                android:id="@+id/sign_inn"
                 android:layout_width="130dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="30dp"
+
                 android:layout_height="wrap_content"
-                android:text="@string/sign_up"
+                android:text="@string/sign_n"
                 android:textColor="@color/white"
                 >
 
             </Button>
             <Button
-                android:id="@+id/sign_in"
+                android:id="@+id/sign_upp"
                 android:layout_width="130dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="50dp"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_n"
+                android:text="@string/sign_up"
                 android:backgroundTint="@color/primaryDarkColor"
                 android:textColor="@color/white"
                 >
 
             </Button>
+
         </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

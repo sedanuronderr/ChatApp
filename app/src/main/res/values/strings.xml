@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FoodRecipe</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password" />
+    <string name="enter_confirm">Enter Confirm</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_n">Sign İn</string>
 </resources>
