@@ -7,4 +7,5 @@
     <string name="enter_confirm">Enter Confirm</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_n">Sign İn</string>
+    <string name="username">Username</string>
 </resources>
