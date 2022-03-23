@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/back.xml" value="0.1" />
         <entry key="..\:/ChatApp/app/src/main/res/layout/activity_login.xml" value="0.13722826086956522" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/ChatApp/app/src/main/res/layout/activity_sign_up.xml" value="0.176" />
-        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_user.xml" value="0.144" />
-        <entry key="..\:/ChatApp/app/src/main/res/layout/item_user.xml" value="0.16" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_user.xml" value="0.2" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/item_user.xml" value="0.128" />
       </map>
     </option>
   </component>
