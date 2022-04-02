@@ -1,4 +1,4 @@
-package com.seda.chatapp
+package com.seda.chatapp.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -15,6 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.seda.chatapp.R
 import com.seda.chatapp.databinding.ActivitySignUpBinding
 
 
@@ -37,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
 
         }
         binding.signIn.setOnClickListener {
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -90,7 +90,7 @@ class SignUpActivity : AppCompatActivity() {
                             if(it.isSuccessful){
 
 
-                                val intent =Intent(this,LoginActivity::class.java)
+                                val intent =Intent(this, LoginActivity::class.java)
                                 startActivity(intent)
                             }
                         }

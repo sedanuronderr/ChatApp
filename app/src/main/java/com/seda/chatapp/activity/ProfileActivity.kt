@@ -1,4 +1,4 @@
-package com.seda.chatapp
+package com.seda.chatapp.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.seda.chatapp.FirebaseStorage.FirebaseClass
+import com.seda.chatapp.R
 import com.seda.chatapp.databinding.ActivityProfileBinding
 import com.seda.chatapp.model.User
 import com.seda.chatapp.utils.GlideLoader
@@ -67,7 +68,7 @@ class ProfileActivity : AppCompatActivity() , View.OnClickListener{
             onBackPressed()
         }
         binding.imgprofile.setOnClickListener {
-            val intent = Intent(this,ProfileActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -90,7 +91,7 @@ class ProfileActivity : AppCompatActivity() , View.OnClickListener{
                   ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 2)
               }
           }
-              R.id.save->{
+              R.id.save ->{
                   if (mselectedImage != null)
                       FirebaseClass.uploadImage(this,mselectedImage)
                   else {

@@ -1,17 +1,13 @@
-package com.seda.chatapp
+package com.seda.chatapp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.seda.chatapp.R
 import com.seda.chatapp.adapter.UserAdapter
 import com.seda.chatapp.databinding.ActivityUserBinding
 import com.seda.chatapp.model.User
@@ -35,7 +31,7 @@ binding.imgback.setOnClickListener{
     onBackPressed()
 }
         binding.imgprofile.setOnClickListener {
-            val intent = Intent(this,ProfileActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
         }

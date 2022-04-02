@@ -1,14 +1,12 @@
-package com.seda.chatapp
+package com.seda.chatapp.activity
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -40,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
         binding.signUpp.setOnClickListener {
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -52,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if(currentUser != null){
-            val intent =Intent(this,UserActivity::class.java)
+            val intent =Intent(this, UserActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -77,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         binding.loginEmail.setText("")
                         binding.loginPassword.setText("")
-                           val intent =Intent(this,UserActivity::class.java)
+                           val intent =Intent(this, UserActivity::class.java)
                         startActivity(intent)
                         finish()
                         // Sign in success, update UI with the signed-in user's information

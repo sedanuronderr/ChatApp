@@ -3,11 +3,10 @@ package com.seda.chatapp.FirebaseStorage
 import android.app.Activity
 import android.net.Uri
 import android.util.Log
-import androidx.fragment.app.Fragment
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.seda.chatapp.Constants.Constans
-import com.seda.chatapp.ProfileActivity
+import com.seda.chatapp.activity.ProfileActivity
 
 class FirebaseClass {
     companion object {
