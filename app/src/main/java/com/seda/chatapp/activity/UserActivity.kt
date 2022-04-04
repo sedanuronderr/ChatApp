@@ -1,15 +1,22 @@
 package com.seda.chatapp.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth.getInstance
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.google.firebase.iid.internal.FirebaseInstanceIdInternal
+import com.google.firebase.messaging.FirebaseMessaging
 import com.seda.chatapp.R
 import com.seda.chatapp.adapter.UserAdapter
 import com.seda.chatapp.databinding.ActivityUserBinding
+import com.seda.chatapp.firebase.firebaseMessagingService
 import com.seda.chatapp.model.User
 
 class UserActivity : AppCompatActivity() {
@@ -20,6 +27,11 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        firebaseMessagingService.sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
+        FirebaseMessaging.getInstance().token.addOnSuccessListener {
+            firebaseMessagingService.token = it
+        }
 
         binding.userRecycler.layoutManager =LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 getUserList()
@@ -38,6 +50,10 @@ binding.imgback.setOnClickListener{
     }
 
     fun getUserList(){
+        val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
+
+        var userid = firebase.uid
+        FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userid")
 
         var databaseReference:DatabaseReference = FirebaseDatabase.getInstance().getReference("Users")
 

@@ -12,20 +12,29 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import com.google.gson.Gson
 import com.seda.chatapp.R
 import com.seda.chatapp.adapter.ChatAdapter
 import com.seda.chatapp.adapter.UserAdapter
 import com.seda.chatapp.databinding.ActivityChatBinding
 import com.seda.chatapp.model.Chat
+import com.seda.chatapp.model.NotificationData
+import com.seda.chatapp.model.PushNotification
 import com.seda.chatapp.model.User
+import com.seda.chatapp.retrofit
 
 import com.seda.chatapp.utils.GlideLoader
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var binding:ActivityChatBinding
     private lateinit var firebaseUser: FirebaseUser
 
     var chatList =ArrayList<Chat>()
+    var topic = ""
     private lateinit var adapter: ChatAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +66,13 @@ binding.usernamee.text= user
             else{
               sendMessage(firebaseUser.uid,receiveidd!!,message)
                    binding.mesaj.setText("")
+
+                topic = "/topics/$receiveidd"
+                PushNotification(
+                    NotificationData( user!!,message),
+                    topic).also {
+                    sendNotification(it)
+                }
             }
         }
 
@@ -113,5 +129,18 @@ binding.usernamee.text= user
             }
 
         })
+    }
+
+    private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
+        try {
+            val response = retrofit.api.postNotification(notification)
+            if(response.isSuccessful) {
+                Log.d("TAG", "Response: ${Gson().toJson(response)}")
+            } else {
+                Log.e("TAG", response.errorBody()!!.string())
+            }
+        } catch(e: Exception) {
+            Log.e("TAG", e.toString())
+        }
     }
 }
