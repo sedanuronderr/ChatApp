@@ -86,7 +86,8 @@
             <Button
                 android:id="@+id/sign_up"
                 android:layout_width="130dp"
-                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+               android:layout_margin="7dp"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
                 android:textColor="@color/white"
@@ -96,8 +97,9 @@
             <Button
                 android:id="@+id/sign_in"
                 android:layout_width="130dp"
-                android:layout_marginStart="30dp"
+                android:layout_margin="7dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/sign_n"
                 android:backgroundTint="@color/primaryDarkColor"
                 android:textColor="@color/white"

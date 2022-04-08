@@ -64,9 +64,8 @@ class ProfileActivity : AppCompatActivity() , View.OnClickListener{
 
         })
 
-        binding.imgback.setOnClickListener{
-            onBackPressed()
-        }
+
+
         binding.imgprofile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
@@ -76,6 +75,7 @@ class ProfileActivity : AppCompatActivity() , View.OnClickListener{
         binding.imgprofile.setOnClickListener(this)
         binding.save.setOnClickListener(this)
     }
+
 
     override fun onClick(v: View?) {
       if(v !=null){
@@ -143,7 +143,7 @@ GlideLoader(this).loadUserPicture(mselectedImage!!,binding.imgprofile)
     }
     fun imageUploadSuccess(imageUrll:String){
 
-        imageUrl =imageUrll
+        imageUrl = imageUrll
         updateProfildetails()
     }
 

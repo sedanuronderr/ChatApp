@@ -40,7 +40,8 @@ getUserList()
         binding.userRecycler.setHasFixedSize(true)
 
 binding.imgback.setOnClickListener{
-    onBackPressed()
+    val intent = Intent(this, LoginActivity::class.java)
+    startActivity(intent)
 }
         binding.imgprofile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)

@@ -30,8 +30,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="12dp">
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/login_email"
@@ -61,26 +62,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <Button
                 android:id="@+id/sign_inn"
                 android:layout_width="130dp"
-                android:layout_marginStart="30dp"
-
                 android:layout_height="wrap_content"
+         android:layout_weight="1"
+                android:layout_margin="7dp"
                 android:text="@string/sign_n"
-                android:textColor="@color/white"
-                >
+                android:textColor="@color/white">
 
             </Button>
+
             <Button
                 android:id="@+id/sign_upp"
                 android:layout_width="130dp"
-                android:layout_marginStart="50dp"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_up"
+                android:layout_weight="1"
+                android:layout_margin="7dp"
                 android:backgroundTint="@color/primaryDarkColor"
-                android:textColor="@color/white"
-                >
+                android:text="@string/sign_up"
+                android:textColor="@color/white">
 
             </Button>
 

@@ -41,6 +41,9 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+
         val user= intent.getStringExtra("user")
         val resim = intent.getStringExtra("resim")
         val receiveidd=intent.getStringExtra("idd")
@@ -53,9 +56,7 @@ class ChatActivity : AppCompatActivity() {
 
 binding.usernamee.text= user
 
-        binding.imgback.setOnClickListener {
-            onBackPressed()
-        }
+
         binding.btnmessage.setOnClickListener {
             var message:String= binding.mesaj.text.toString()
 
@@ -64,7 +65,7 @@ binding.usernamee.text= user
                 binding.mesaj.setText("")
             }
             else{
-              sendMessage(firebaseUser.uid,receiveidd!!,message)
+              sendMessage(firebaseUser.uid,receiveidd!!,message,resim!!)
                    binding.mesaj.setText("")
 
                 topic = "/topics/$receiveidd"
@@ -85,13 +86,15 @@ binding.usernamee.text= user
 
     }
 
- fun sendMessage(senderId:String,receiverId:String,message:String){
+
+
+    fun sendMessage(senderId:String,receiverId:String,message:String,image:String){
         val reference: DatabaseReference = FirebaseDatabase.getInstance().getReference("Chat")
         val hashMap:HashMap<String,String> = HashMap()
         hashMap.put("senderId",senderId)
         hashMap.put("receiverId", receiverId)
         hashMap.put("message",message)
-
+         hashMap.put("image",image)
 
         reference.child(java.lang.String.valueOf(System.currentTimeMillis())).setValue(hashMap)
 

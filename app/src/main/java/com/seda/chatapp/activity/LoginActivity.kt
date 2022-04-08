@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
         binding.signUpp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
 
     }

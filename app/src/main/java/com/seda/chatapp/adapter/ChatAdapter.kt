@@ -16,6 +16,7 @@ import com.seda.chatapp.databinding.ActivityChatBinding.inflate
 import com.seda.chatapp.databinding.ItemLeftBinding
 import com.seda.chatapp.databinding.ItemRightBinding
 import com.seda.chatapp.model.Chat
+import com.seda.chatapp.utils.GlideLoader
 
 
 class ChatAdapter(private val context: Context,private val chatList: ArrayList<Chat>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -23,10 +24,12 @@ class ChatAdapter(private val context: Context,private val chatList: ArrayList<C
 private val MESSAGE_TYPE_LEFT = 0
     private val MESSAGE_TYPE_RIGHT =1
     var firebaseUser:FirebaseUser?=null
-    class ItemLeftViewHolder(private val Itemleft: ItemLeftBinding) :
-        RecyclerView.ViewHolder(Itemleft.root) {
-        fun bind(chat: Chat) {
+    class ItemLeftViewHolder( val Itemleft: ItemLeftBinding) : RecyclerView.ViewHolder(Itemleft.root) {
+        fun bind(chat: Chat,context: Context) {
             Itemleft.userrNameleft.text= chat.message
+            Glide.with(context).load(chat.image).placeholder(R.drawable.acount)
+                .into(Itemleft.userImageleft)
+
 
         }
 
@@ -34,9 +37,10 @@ private val MESSAGE_TYPE_LEFT = 0
 
     class ItemRightViewHolder(private val ItemRigh: ItemRightBinding) :
       RecyclerView.ViewHolder(ItemRigh.root) {
-        fun bind(chat:Chat) {
+        fun bind(chat:Chat,context: Context) {
             ItemRigh.userrNameRight.text= chat.message
-
+            Glide.with(context).load(chat.image).placeholder(R.drawable.acount)
+                .into(ItemRigh.userImageRight)
         }
     }
 
@@ -55,10 +59,10 @@ private val MESSAGE_TYPE_LEFT = 0
         val user = chatList[position]
 
         if(getItemViewType(position) == MESSAGE_TYPE_RIGHT){
-            (holder as ItemRightViewHolder ).bind(user)
+            (holder as ItemRightViewHolder ).bind(user,context)
 
         }else{
-            (holder as ItemLeftViewHolder).bind(user)
+            (holder as ItemLeftViewHolder).bind(user,context)
         }
     }
 
