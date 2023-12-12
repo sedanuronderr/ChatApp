@@ -1,5 +1,5 @@
 # ChatApp
-Projede Firebase,Fcm Messaging,Glide kütüphaneleri kullanıldı.
+## Firebase,Fcm Messaging,Glide Jetpack libraries were used in the project..
 
 <table>
 <tr>
